@@ -1,8 +1,8 @@
 #!/bin/bash
-read -p " Enter filename to know the permissions : " file
-if [[ -f $file ]]
+read -p " Enter directory name to know the permissions : " dir
+if [[ -d $dir ]]
 then
-	echo -e "$(ls -l $file)"
+	echo -e "$(ls -l $dir)"
 else
-	echo "File does not exist"
+	echo " $dir Directory does not exist"
 fi

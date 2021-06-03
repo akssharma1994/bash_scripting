@@ -1,5 +1,5 @@
 #!/bin/bash
-read -p "Enter the user name: " user
+read -p "Enter the user name to its shell info : " user
 
 
 myvar=$(cat /etc/passwd | awk -F ':' '{ print $1 , $7 }' | grep "$user")
