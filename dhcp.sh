@@ -1,8 +1,8 @@
 #!/bin/bash
 
-sed -i s/IPADDR*/IPADDR=192.168.10.3/g /etc/sysconfig/network-scripts/ifcfg-ens33
-sed -i s/PRIFIX*/PREFIX=24/g /etc/sysconfig/network-scripts/ifcfg-ens33
-sed -i s/GATEWAY*/GATEWAY=192.168.10.1/ /etc/sysconfig/network-scripts/ifcfg-ens33
+sed -i s/IPADDR=*/IPADDR=192.168.10.5/g /etc/sysconfig/network-scripts/ifcfg-ens33
+sed -i s/PREFIX=*/PREFIX=24/g /etc/sysconfig/network-scripts/ifcfg-ens33
+sed -i s/GATEWAY=*/GATEWAY=192.168.10.1/g /etc/sysconfig/network-scripts/ifcfg-ens33
 ifdown ens33
 ifup ens33
 
@@ -55,3 +55,4 @@ echo "Checking if started properly"
 service dhcpd status | head -n6
 echo "Done. Please go to client to fetch the IP from DHCP Server. Thanks "
 whoami
+
