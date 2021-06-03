@@ -1,0 +1,12 @@
+#!/bin/bash
+read -p "Enter the user name: " user
+
+
+myvar=$(cat /etc/passwd | awk -F ':' '{ print $1 , $7 }' | grep "$user")
+
+if [[ -n $myvar ]]
+then
+echo "$myvar"
+else
+echo "user not found"
+fi
